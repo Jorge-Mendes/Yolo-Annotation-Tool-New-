@@ -85,7 +85,7 @@ class LabelTool():
         self.mainPanel.bind("<Button-1>", self.mouseClick)
         self.mainPanel.bind("<Motion>", self.mouseMove)
         self.parent.bind("<Escape>", self.cancelBBox)  # press <Espace> to cancel current bbox
-        self.parent.bind("s", self.cancelBBox)
+        self.parent.bind("s", self.saveImage)
         self.parent.bind("<Left>", self.prevImage) # press 'a' to go backforward
         self.parent.bind("<Right>", self.nextImage) # press 'd' to go forward
         self.mainPanel.grid(row = 1, column = 1, rowspan = 4, sticky = W+N)
@@ -122,6 +122,8 @@ class LabelTool():
         self.idxEntry.pack(side = LEFT)
         self.goBtn = Button(self.ctrPanel, text = 'Go', command = self.gotoImage)
         self.goBtn.pack(side = LEFT)
+        self.progLabel = Label(self.ctrPanel, text="     Press 's' to save annotations.     ")
+        self.progLabel.pack(side=LEFT, padx=5)
 
         # example pannel for illustration
         self.egPanel = Frame(self.frame, border = 10)
@@ -208,7 +210,7 @@ class LabelTool():
                     self.listbox.insert(END, '(%d, %d) -> (%d, %d) -> (%s)' %(tmp[0], tmp[1], tmp[2], tmp[3], classes[int(yolo_data[0])]))
                     self.listbox.itemconfig(len(self.bboxIdList) - 1, fg = COLORS[int(yolo_data[0])])
         
-    def saveImage(self):
+    def saveImage(self, event = None):
         with open(self.labelfilename, 'w') as f:
             for bbox,bboxcls in zip(self.bboxList,self.bboxListCls):
                 xmin,ymin,xmax,ymax = bbox
