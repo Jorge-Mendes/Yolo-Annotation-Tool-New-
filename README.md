@@ -9,7 +9,7 @@ run process.py
 ```
 
 #### Note
-If you use this annotation tool, please create a classes.txt file with the classes you intend to train. All classes are read from that file.
+If you use this annotation tool, please create a `classes.txt` file with the classes you intend to train. All classes are read from that file.
 
 #### Original GitHub project:
 [ManivannanMurugavel/Yolo-Annotation-Tool-New](https://github.com/ManivannanMurugavel/Yolo-Annotation-Tool-New- "ManivannanMurugavel/Yolo-Annotation-Tool-New repository")
