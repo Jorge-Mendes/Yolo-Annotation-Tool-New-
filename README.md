@@ -1,22 +1,15 @@
-# Yolo-Annotation-Tool-New
+# Yolo-Annotation-Tool-PY3
+Image annotation tool to annotate images in the format required by YoloV2 and YoloV3. The generated dataset is ready for Yolo training.
 
-This is new yolo annotation tool which is added new features. I have posted three blogs for how to train yolov2 and v3 using our custom images.
-
-You can follow three steps for annotate the image to yolo.<br>
-Steps:
-```
-run main.py
-run convert.py
-run process.py
-```
-
-Now i have implemented the convert.py process in main.py. So you don't run the convert.py for yolo annotating.<br>
-Do steps:
+#### How to use
+You can follow these two steps to annotate the image for Yolo:
 ```
 run main.py
 run process.py
 ```
 
-NOTE: If you use new annotation tool, please create classes.txt file and write all classes what you train the objects. Because i read the all classes from classes.txt.
+#### Note
+If you use this annotation tool, please create a classes.txt file with the classes you intend to train. All classes are read from that file.
 
-The dataset is ready for yolo training.
+#### Original GitHub project:
+[ManivannanMurugavel/Yolo-Annotation-Tool-New](https://github.com/ManivannanMurugavel/Yolo-Annotation-Tool-New- "ManivannanMurugavel/Yolo-Annotation-Tool-New repository")
